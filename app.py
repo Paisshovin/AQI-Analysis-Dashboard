@@ -90,3 +90,13 @@ with c2:
 # Data Table
 with st.expander("View Raw Filtered Data"):
     st.dataframe(filtered_df)
+# Calculate basic stats
+total_countries = df['Country'].nunique()
+avg_aqi = df['AQI Value'].mean()
+max_aqi = df['AQI Value'].max()
+
+# Create three columns for metrics
+col1, col2, col3 = st.columns(3)
+col1.metric("Countries Analyzed", total_countries)
+col2.metric("Average Global AQI", f"{avg_aqi:.2f}")
+col3.metric("Highest Recorded AQI", max_aqi)
