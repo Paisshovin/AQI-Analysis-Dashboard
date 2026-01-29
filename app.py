@@ -8,7 +8,7 @@ st.set_page_config(page_title="Global Air Quality Dashboard", layout="wide")
 # 1. Load Data
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"C:\Users\Shovin\Downloads\archive (3)\AQI and Lat Long of Countries.csv")
+    df = pd.read_csv("AQI and Lat Long of Countries.csv")
     # Basic cleaning
     df = df.dropna(subset=['Country'])
     # Create Hemisphere column
